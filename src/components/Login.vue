@@ -61,7 +61,7 @@ export default {
     login: function () {
       this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return false
-        const { data: res } = await this.$axios.post('login', this.loginForm)
+        const { data: res } = await this.$http.post('login', this.loginForm)
         if (res.meta.status !== 200) {
           return this.$message({
             message: '登录失败',
